@@ -1,0 +1,23 @@
+name: Java CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: aarch64
+          java-version: 24      # change to your Java version
+          cache: maven
+
+      - name: Build and test
+        run: mvn -B verify
