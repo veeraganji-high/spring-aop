@@ -1,4 +1,7 @@
 package com.example.springaopdemo.repository;
 
-public interface TransactionRepository implements JPARepository {
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface TransactionRepository {
 }
